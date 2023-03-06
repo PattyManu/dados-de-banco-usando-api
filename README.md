@@ -103,14 +103,14 @@ Esse endpoint lista todas as contas bancárias existentes.
 #### `POST` `/contas`
 
 Esse endpoint cria uma conta bancária, onde será gerado um número único para identificação da conta (número da conta).
- -
+
     -   Criar uma nova conta cujo número é único
     -   CPF deve ser um campo único.
     -   E-mail deve ser um campo único.
     -   Verificar se todos os campos foram informados (todos são obrigatórios)
     -   Definir o saldo inicial da conta como 0
 
--   **Requisição** - O corpo (body) deverá possuir um objeto com as seguintes propriedades:
+-   **Requisição** - O corpo (body) possui um objeto com as seguintes propriedades:
 
     -   nome
     -   cpf
@@ -155,9 +155,7 @@ Esse endpoint cria uma conta bancária, onde será gerado um número único para
 
 #### `PUT` `/contas/:numeroConta/usuario`
 
-Esse endpoint deverá atualizar apenas os dados do usuário de uma conta bancária.
-
--   Você deverá, **OBRIGATORIAMENTE**:
+Esse endpoint atualiza apenas os dados do usuário de uma conta bancária.
 
     -   Verificar se foi passado todos os campos no body da requisição
     -   Verificar se o numero da conta passado como parametro na URL é válida
@@ -165,7 +163,7 @@ Esse endpoint deverá atualizar apenas os dados do usuário de uma conta bancár
     -   Se o E-mail for informado, verificar se já existe outro registro com o mesmo E-mail
     -   Atualizar os dados do usuário de uma conta bancária
 
--   **Requisição** - O corpo (body) deverá possuir um objeto com todas as seguintes propriedades (respeitando estes nomes):
+-   **Requisição** - O corpo (body) deverá possuir um objeto com todas as seguintes propriedades:
 
     -   nome
     -   cpf
@@ -210,9 +208,7 @@ Esse endpoint deverá atualizar apenas os dados do usuário de uma conta bancár
 
 #### `DELETE` `/contas/:numeroConta`
 
-Esse endpoint deve excluir uma conta bancária existente.
-
--   Você deverá, **OBRIGATORIAMENTE**:
+Esse endpoint exclui uma conta bancária existente.
 
     -   Verificar se o numero da conta passado como parametro na URL é válido
     -   Permitir excluir uma conta bancária apenas se o saldo for 0 (zero)
@@ -244,16 +240,14 @@ Esse endpoint deve excluir uma conta bancária existente.
 
 #### `POST` `/transacoes/depositar`
 
-Esse endpoint deverá somar o valor do depósito ao saldo de uma conta válida e registrar essa transação.
-
--   Você deverá, **OBRIGATORIAMENTE**:
+Esse endpoint soma o valor do depósito ao saldo de uma conta válida e registrar essa transação.
 
     -   Verificar se o numero da conta e o valor do deposito foram informados no body
     -   Verificar se a conta bancária informada existe
     -   Não permitir depósitos com valores negativos ou zerados
     -   Somar o valor de depósito ao saldo da conta encontrada
 
--   **Requisição** - O corpo (body) deverá possuir um objeto com as seguintes propriedades (respeitando estes nomes):
+-   **Requisição** - O corpo (body) deverá possuir um objeto com as seguintes propriedades:
 
     -   numero_conta
     -   valor
@@ -299,9 +293,7 @@ Esse endpoint deverá somar o valor do depósito ao saldo de uma conta válida e
 
 #### `POST` `/transacoes/sacar`
 
-Esse endpoint deverá realizar o saque de um valor em uma determinada conta bancária e registrar essa transação.
-
--   Você deverá, **OBRIGATORIAMENTE**:
+Esse endpoint realiza o saque de um valor em uma determinada conta bancária e registrar essa transação.
 
     -   Verificar se o numero da conta, o valor do saque e a senha foram informados no body
     -   Verificar se a conta bancária informada existe
@@ -309,7 +301,7 @@ Esse endpoint deverá realizar o saque de um valor em uma determinada conta banc
     -   Verificar se há saldo disponível para saque
     -   Subtrair o valor sacado do saldo da conta encontrada
 
--   **Requisição** - O corpo (body) deverá possuir um objeto com as seguintes propriedades (respeitando estes nomes):
+-   **Requisição** - O corpo (body) deverá possuir um objeto com as seguintes propriedades:
 
     -   numero_conta
     -   valor
@@ -355,9 +347,7 @@ Esse endpoint deverá realizar o saque de um valor em uma determinada conta banc
 
 #### `POST` `/transacoes/transferir`
 
-Esse endpoint deverá permitir a transferência de recursos (dinheiro) de uma conta bancária para outra e registrar essa transação.
-
--   Você deverá, **OBRIGATORIAMENTE**:
+Esse endpoint permiti a transferência de recursos (dinheiro) de uma conta bancária para outra e registrar essa transação.
 
     -   Verificar se o número da conta de origem, de destino, senha da conta de origem e valor da transferência foram informados no body
     -   Verificar se a conta bancária de origem informada existe
@@ -367,7 +357,7 @@ Esse endpoint deverá permitir a transferência de recursos (dinheiro) de uma co
     -   Subtrair o valor da transfência do saldo na conta de origem
     -   Somar o valor da transferência no saldo da conta de destino
 
--   **Requisição** - O corpo (body) deverá possuir um objeto com as seguintes propriedades (respeitando estes nomes):
+-   **Requisição** - O corpo (body) deverá possuir um objeto com as seguintes propriedades:
 
     -   numero_conta_origem
     -   numero_conta_destino
@@ -417,9 +407,7 @@ Esse endpoint deverá permitir a transferência de recursos (dinheiro) de uma co
 
 #### `GET` `/contas/saldo?numero_conta=123&senha=123`
 
-Esse endpoint deverá retornar o saldo de uma conta bancária.
-
--   Você deverá, **OBRIGATORIAMENTE**:
+Esse endpoint retorna o saldo de uma conta bancária.
 
     -   Verificar se o numero da conta e a senha foram informadas (passado como query params na url)
     -   Verificar se a conta bancária informada existe
@@ -454,9 +442,7 @@ Esse endpoint deverá retornar o saldo de uma conta bancária.
 
 #### `GET` `/contas/extrato?numero_conta=123&senha=123`
 
-Esse endpoint deverá listar as transações realizadas de uma conta específica.
-
--   Você deverá, **OBRIGATORIAMENTE**:
+Esse endpoint lista as transações realizadas de uma conta específica.
 
     -   Verificar se o numero da conta e a senha foram informadas (passado como query params na url)
     -   Verificar se a conta bancária informada existe
@@ -527,4 +513,4 @@ Esse endpoint deverá listar as transações realizadas de uma conta específica
 }
 ```
 
-###### tags: `back-end` `nodeJS` `API REST` `desafio`
+###### tags: `back-end` `nodeJS` `API REST` 
