@@ -39,6 +39,7 @@ Os dados serão persistidos em memória, no objeto existente dentro do arquivo `
     ],
 }
 
+````
 ### Listar contas bancárias
 
 #### `GET` `/contas?senha_banco=Cubos123Bank`
