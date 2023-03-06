@@ -44,14 +44,12 @@ Os dados serão persistidos em memória, no objeto existente dentro do arquivo `
 
 #### `GET` `/contas?senha_banco=Cubos123Bank`
 
-Esse endpoint deverá listar todas as contas bancárias existentes.
-
--   Você deverá, **OBRIGATORIAMENTE**:
+Esse endpoint lista todas as contas bancárias existentes.
 
     -   Verificar se a senha do banco foi informada (passado como query params na url)
     -   Validar se a senha do banco está correta
 
--   **Requisição** - query params (respeitando este nome)
+-   **Requisição** - query params 
 
     -   senha_banco
 
@@ -104,17 +102,15 @@ Esse endpoint deverá listar todas as contas bancárias existentes.
 
 #### `POST` `/contas`
 
-Esse endpoint deverá criar uma conta bancária, onde será gerado um número único para identificação da conta (número da conta).
-
--   Você deverá, **OBRIGATORIAMENTE**:
-
+Esse endpoint cria uma conta bancária, onde será gerado um número único para identificação da conta (número da conta).
+ -
     -   Criar uma nova conta cujo número é único
     -   CPF deve ser um campo único.
     -   E-mail deve ser um campo único.
     -   Verificar se todos os campos foram informados (todos são obrigatórios)
     -   Definir o saldo inicial da conta como 0
 
--   **Requisição** - O corpo (body) deverá possuir um objeto com as seguintes propriedades (respeitando estes nomes):
+-   **Requisição** - O corpo (body) deverá possuir um objeto com as seguintes propriedades:
 
     -   nome
     -   cpf
